@@ -1,0 +1,14 @@
+---
+
+- name: Prov-Ind
+  hosts: gitlab_runner
+  become: true
+  environment:
+    ANSIBLE_CALLBACK_PLUGINS: $(python -m ara.setup.callback_plugins)
+
+  roles:
+    - common
+    - python
+    - extras
+    # - postgresql
+    # - server
